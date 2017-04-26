@@ -21,6 +21,12 @@
 
     document.body.appendChild(noteListDiv);
 
+    var noteDisplayDiv = document.createElement('div');
+    noteDisplayDiv.setAttribute("class",'note-display-div');
+    noteDisplayDiv.setAttribute("id",'note-display-div');
+
+    document.body.appendChild(noteDisplayDiv);
+
   };
 
 
@@ -72,6 +78,7 @@
     var buttonName = document.createTextNode('Create');
     button.appendChild(buttonName);
     button.setAttribute('id','create-note-button');
+    button.setAttribute('class', 'create')
     return button;
   }
 
@@ -96,6 +103,7 @@ setupPageDivs();
 buildForm();
 buildList();
 var noteList = new NoteList();
+var noteLink = new NoteLink();
 function createNote() {
   var textarea = document.getElementById('note-input-field');
   var note = document.getElementById('note-input-field').value;

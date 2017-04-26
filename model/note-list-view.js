@@ -10,7 +10,7 @@
       var abbreviatedNote = notelist.notepad[notePadLength-1].text.slice(0, 20);
       var noteString = document.createTextNode(abbreviatedNote);
       noteItem.appendChild(noteString);
-      // debugger;
+      noteItem.addEventListener('click', function() {noteLink.addLink(noteItem.id)}, false);
       list.appendChild(noteItem);
     };
   }
