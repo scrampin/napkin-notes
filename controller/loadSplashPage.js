@@ -8,7 +8,6 @@
     var noteInputDiv = document.createElement('div');
     noteInputDiv.setAttribute("class",'note-input-div');
     noteInputDiv.setAttribute("id",'note-input-div');
-
     document.body.appendChild(noteInputDiv);
 
 
@@ -18,17 +17,14 @@
     var noteListDiv = document.createElement('div');
     noteListDiv.setAttribute("class",'note-list-div');
     noteListDiv.setAttribute("id",'note-list-div');
-
     document.body.appendChild(noteListDiv);
 
     var noteDisplayDiv = document.createElement('div');
     noteDisplayDiv.setAttribute("class",'note-display-div');
     noteDisplayDiv.setAttribute("id",'note-display-div');
-
     document.body.appendChild(noteDisplayDiv);
 
   };
-
 
   addToPage = function(element){
     document.body.appendChild(element)
@@ -54,16 +50,12 @@
     subtitleDiv.setAttribute('id','subtitle-div');
     var subtitle = document.createElement('H2')
     var titleText = document.createTextNode("List Of Notes");
-
     subtitle.setAttribute('id','subtitle');
     subtitle.appendChild(titleText);
     subtitleDiv.appendChild(subtitle);
-
     return subtitleDiv
 
   }
-
-
 
   function addTextArea(){
     var textarea = document.createElement('textarea');
@@ -104,15 +96,3 @@ buildForm();
 buildList();
 var noteList = new NoteList();
 var noteLink = new NoteLink();
-function createNote() {
-  var textarea = document.getElementById('note-input-field');
-  var note = document.getElementById('note-input-field').value;
-  noteList.createAndStore(note);
-  var noteController = new NoteController(noteList);
-  noteController.appendList();
-  textarea.value = '';
-}
-
-//
-var form = document.getElementById('create-note-button');
-form.addEventListener("click", createNote, false);
